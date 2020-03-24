@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.core.mapper.UserMapper">
+
+    <resultMap type="com.core.bean.UserShrio" id="resultRM">
+        <id property="id" column="id" />
+        <result property="username" column="username" />
+        <result property="password" column="password" />
+        <result property="perms" column="perms" />
+    </resultMap>
+
+
+    <select id="findByName" resultMap="resultRM">
+        select * from usershrio where username = #{username}
+    </select>
+
+    <select id="findById" resultMap="resultRM">
+		select * from usershrio where
+		id =
+		#{id}
+	</select>
+
+
+    <update id="update">
+        update usershrio
+        <set>
+            <if test="username != null and username != '' ">
+                username = #{username},
+            </if>
+            <if test="password != null and password != '' ">
+                password = #{password},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <select id="selectAll" resultMap="resultRM">
+		select * from usershrio
+	</select>
+
+
+    <select id="select1" resultMap="resultRM">
+        select * from usershrio
+        <where>
+            <if test="userName != null and userName != '' ">
+                and user_name = #{userName}
+            </if>
+            <if test="userSex != null and userSex != '' ">
+                and user_sex = #{userSex}
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

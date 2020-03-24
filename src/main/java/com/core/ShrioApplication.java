@@ -1,0 +1,14 @@
+package com.core;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ShrioApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ShrioApplication.class, args);
+        System.out.println("springboot shrio start!");
+    }
+
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:shrio="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>hello lewis, Thymeleaf test</title>
+</head>
+<body>
+<h1>hello !</h1>
+<h1 th:text="${name}"></h1>
+<div shrio:hasPermission="user:add">用户添加功能： <a href="add">用户添加</a></div>
+<!--用户添加功能： <a href="add">用户添加</a>-->
+<br/>
+<div shrio:hasPermission="user:update">用户更新功能： <a href="update">用户更新</a></div>
+<br/>
+<!--用户更新功能： <a href="update">用户更新</a>-->
+<a href="/toLogin">登录</a>
+
+</body>
+</html>
